@@ -1,2 +1,5 @@
 1. init, see https://wicket.apache.org/start/quickstart.html
 2. logger
+3. spring boot, see
+    - https://github.com/MarcGiffing/wicket-spring-boot#introduction
+    - https://github.com/MarcGiffing/wicket-spring-boot-examples
