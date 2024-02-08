@@ -17,20 +17,7 @@ public class HomePage extends WebPage {
 		super(parameters);
 		LOG.info("Loading HomePage");
 
-		final Form form = new Form<Void>("form"){
-			@Override
-			protected void onSubmit() {
-				setResponsePage(SecondPage.class);
-			}
-		};
-		queue(form);
-
-		add(new Link<Void>("mylink") {
-			@Override
-			public void onClick() {
-				setResponsePage(SecondPage.class);
-			}
-		});
+		queue(new LoginForm("loginForm"));
 
 	}
 }

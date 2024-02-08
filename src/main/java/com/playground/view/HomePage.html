@@ -6,10 +6,15 @@
 <div class="container">
 	So simple!
 	<wicket:child/>
-	<a wicket:id="mylink">link</a>
-
-	<form wicket:id="form">
-		<input type="submit" value="Login" />
+	<form id="loginForm" method="get" wicket:id="loginForm" xmlns:wicket="http://www.w3.org/1999/xhtml">
+		<fieldset>
+			<legend style="color: #F90">Login</legend>
+			<span>Username: </span><input wicket:id="username" type="text" id="username" /><br/>
+			<span>Password: </span><input wicket:id="password" type="password" id="password" />
+			<p>
+				<input type="submit" name="Login" value="Login"/>
+			</p>
+		</fieldset>
 	</form>
 </div>
 </body>
