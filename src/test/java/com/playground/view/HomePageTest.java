@@ -1,12 +1,10 @@
 package com.playground.view;
 
 import com.playground.WicketWebApplication;
-import com.playground.view.HomePage;
-import com.playground.view.SecondPage;
+import org.apache.wicket.Page;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.util.tester.FormTester;
 import org.apache.wicket.util.tester.WicketTester;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -36,11 +34,23 @@ public class HomePageTest {
 
 
     @Test
-    public void testest() {
+    public void testLink() {
         tester.startPage(HomePage.class);
-        FormTester newFormTester = tester.newFormTester("form");
-        newFormTester.submit();
+        tester.clickLink("mylink");
         tester.assertRenderedPage(SecondPage.class);
+    }
+
+    @Test
+    public void testFormSubmit() {
+        tester.startPage(HomePage.class);
+
+        final FormTester loginForm = tester.newFormTester("loginForm");
+        loginForm.setValue("username", "input 123");
+        loginForm.setValue("password", "random");
+
+        loginForm.submit();
+        tester.assertRenderedPage(SecondPage.class);
+        tester.assertLabel("key", "input 123");
     }
 
 }

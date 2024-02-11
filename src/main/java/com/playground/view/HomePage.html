@@ -1,21 +1,16 @@
-<html xmlns:wicket="http://wicket.apache.org">
-<head>
-	<title>Wicket!</title>
-</head>
-<body>
-<div class="container">
-	So simple!
-	<wicket:child/>
-	<form id="loginForm" method="get" wicket:id="loginForm" xmlns:wicket="http://www.w3.org/1999/xhtml">
-		<fieldset>
-			<legend style="color: #F90">Login</legend>
-			<span>Username: </span><input wicket:id="username" type="text" id="username" /><br/>
-			<span>Password: </span><input wicket:id="password" type="password" id="password" />
-			<p>
-				<input type="submit" name="Login" value="Login"/>
-			</p>
-		</fieldset>
-	</form>
-</div>
-</body>
-</html>
+<wicket:extend xmlns:wicket="http://www.w3.org/1999/xhtml">
+	<div class="container">
+		<a wicket:id="mylink">link</a>
+
+		<form id="loginForm" method="get" wicket:id="loginForm" xmlns:wicket="http://www.w3.org/1999/xhtml">
+			<fieldset>
+				<legend style="color: #F90">Login</legend>
+				<span>Username: </span><input wicket:id="username" type="text" id="username" /><br/>
+				<span>Password: </span><input wicket:id="password" type="password" id="password" />
+				<p>
+					<input type="submit" name="Login" value="Login"/>
+				</p>
+			</fieldset>
+		</form>
+	</div>
+</wicket:extend>

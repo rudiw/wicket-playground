@@ -1,11 +1,14 @@
-<html xmlns:wicket="http://wicket.apache.org">
-<head>
-    <title>Wicket!</title>
-</head>
-<body>
+<wicket:extend xmlns:wicket="http://www.w3.org/1999/xhtml">
 <div class="container">
     Second
-    <wicket:child/>
+
+    <label wicket:id="key"></label>
+    <br />
+
+    <form wicket:id="myform">
+        <button wicket:id="mybtn">send critical msg</button>
+    </form>
+
+    <div wicket:id="messagePanel"/>
 </div>
-</body>
-</html>
+</wicket:extend>

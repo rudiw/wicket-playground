@@ -16,6 +16,11 @@ public class WicketWebApplication extends WicketBootStandardWebApplication {
     }
 
     @Override
+    protected void init() {
+        super.init();
+    }
+
+    @Override
     public Class<? extends Page> getHomePage() {
         return HomePage.class;
     }

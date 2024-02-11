@@ -5,6 +5,7 @@ import org.apache.wicket.markup.html.form.PasswordTextField;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,5 +28,9 @@ public class LoginForm extends Form<Void> {
     protected void onSubmit() {
         super.onSubmit();
         LOG.info("Submiting for username '{}' and password '{}'", usernameModel.getObject(), passwordModel.getObject());
+
+        final PageParameters params = new PageParameters();
+        params.set("key", usernameModel.getObject());
+        setResponsePage(SecondPage.class, params);
     }
 }
